@@ -30,14 +30,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        var homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
-        var searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
-        var composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
-        var accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
-        var trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
+        homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+        searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
+        composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
+        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
         
         containerView.addSubview(homeViewController.view)
         
@@ -47,18 +46,42 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onTabBarButton(sender: UIButton) {
-        
+
         selectedButton = sender as UIButton
         
-        var selectedTab = selectedButton
-        if selectedTab == homeButton {
+        homeButton.selected = false
+        searchButton.selected = false
+        accountButton.selected = false
+        trendingButton.selected = false
+        
+        selectedButton.selected = true
+        
+        var tabBarButton = selectedButton
+        
+        if tabBarButton == homeButton {
+            self.addChildViewController(homeViewController)
+            containerView.addSubview(homeViewController.view)
+            homeViewController.didMoveToParentViewController(self)
             println("Home")
-        } else if selectedTab == searchButton {
+
+        } else if tabBarButton == searchButton {
+            self.addChildViewController(searchViewController)
+            containerView.addSubview(searchViewController.view)
+            searchViewController.didMoveToParentViewController(self)
             println("Search")
-        } else if selectedTab == accountButton {
+            
+        } else if tabBarButton == accountButton {
+            self.addChildViewController(accountViewController)
+            containerView.addSubview(accountViewController.view)
+            accountViewController.didMoveToParentViewController(self)
             println("Account")
-        } else if selectedTab == trendingButton {
+            
+        } else if tabBarButton == trendingButton {
+            self.addChildViewController(trendingViewController)
+            containerView.addSubview(trendingViewController.view)
+            trendingViewController.didMoveToParentViewController(self)
             println("Trending")
+            
         }
     }
     
