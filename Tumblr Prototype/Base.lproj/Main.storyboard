@@ -206,6 +206,7 @@
                         <color key="backgroundColor" red="0.14901960784313725" green="0.20392156862745098" blue="0.28627450980392155" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="Cdf-ay-bsH" id="nPB-An-emC"/>
                         <outlet property="chatButton" destination="fhi-Hr-exr" id="mVm-2k-dXp"/>
                         <outlet property="linkButton" destination="iRl-Qy-Yy8" id="Guj-V0-YQ7"/>
                         <outlet property="photoButton" destination="qRC-SF-NRO" id="jvP-xq-Sis"/>

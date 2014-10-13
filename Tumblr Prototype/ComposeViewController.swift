@@ -16,6 +16,7 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
     @IBOutlet weak var linkButton: UIButton!
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var videoButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
    
     
     @IBAction func onCancelButton(sender: UIButton) {

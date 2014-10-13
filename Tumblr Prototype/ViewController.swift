@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     
-    var isPresenting: Bool = true {
+    var isPresenting: Bool = true
 
     @IBOutlet weak var containerView: UIView!
 
@@ -116,17 +116,85 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
         if (isPresenting) {
+            
+            let vc = toViewController as ComposeViewController
+            
+            // setting the buttons outside of the view
+            vc.textButton.transform = CGAffineTransformMakeTranslation(0, 568)
+            vc.photoButton.transform = CGAffineTransformMakeTranslation(0, 568)
+            vc.quoteButton.transform = CGAffineTransformMakeTranslation(0, 568)
+            vc.linkButton.transform = CGAffineTransformMakeTranslation(0, 568)
+            vc.chatButton.transform = CGAffineTransformMakeTranslation(0, 568)
+            vc.videoButton.transform = CGAffineTransformMakeTranslation(0, 568)
+            vc.cancelButton.transform = CGAffineTransformMakeTranslation(0, 568)
+            
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
+            toViewController.view.backgroundColor = UIColor(red:0.2, green:0.25, blue:0.33, alpha:0.9)
+            
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 toViewController.view.alpha = 1
                 }) { (finished: Bool) -> Void in
+                    
+                    // move buttons to the view
+                    
+                    UIView.animateWithDuration(0.4, delay: 0.16, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.2, options: nil, animations: { () -> Void in
+                        vc.textButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                    }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.2, options: nil, animations: { () -> Void in
+                        vc.photoButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                    }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0.16, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.2, options: nil, animations: { () -> Void in
+                        vc.quoteButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                    }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0.34, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                        vc.linkButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                    }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0.22, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                        vc.chatButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                    }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0.4, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                        vc.videoButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                    }, completion: nil )
+                    UIView.animateWithDuration(0.42, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: nil, animations: { () -> Void in
+                        vc.cancelButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                    }, completion: nil )
+                    
+                    
+                    
                     transitionContext.completeTransition(true)
             }
         } else {
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 fromViewController.view.alpha = 0
                 }) { (finished: Bool) -> Void in
+                    
+                    let vc = fromViewController as ComposeViewController
+                    
+                    // want to animte buttons out and up
+                    
+                    UIView.animateWithDuration(0.4, delay: 0.16, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.2, options: nil, animations: { () -> Void in
+                        vc.textButton.transform = CGAffineTransformMakeTranslation(0, 220)
+                        }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.2, options: nil, animations: { () -> Void in
+                        vc.photoButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                        }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0.16, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.2, options: nil, animations: { () -> Void in
+                        vc.quoteButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                        }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0.34, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                        vc.linkButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                        }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0.22, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                        vc.chatButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                        }, completion: nil )
+                    UIView.animateWithDuration(0.4, delay: 0.4, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
+                        vc.videoButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                        }, completion: nil )
+                    UIView.animateWithDuration(0.42, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: nil, animations: { () -> Void in
+                        vc.cancelButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                        }, completion: nil )
+                    
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
             }
