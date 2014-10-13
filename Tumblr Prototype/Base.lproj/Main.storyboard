@@ -28,6 +28,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="home_selected_icon"/>
+                                        <connections>
+                                            <action selector="onTabBarButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yiT-3f-lqE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ywd-fo-Loh">
                                         <rect key="frame" x="73" y="4" width="35" height="35"/>
@@ -36,6 +39,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="search_selected_icon"/>
+                                        <connections>
+                                            <action selector="onTabBarButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oP0-2s-uav"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vll-qk-2rM">
                                         <rect key="frame" x="135" y="4" width="50" height="35"/>
@@ -43,6 +49,9 @@
                                         <state key="normal" image="compose_button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="KwJ-9e-Wxu" kind="modal" identifier="composeSegue" id="yT4-Pm-ENF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vo4-p0-fUA">
                                         <rect key="frame" x="208" y="4" width="35" height="35"/>
@@ -51,6 +60,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="account_selected_icon"/>
+                                        <connections>
+                                            <action selector="onTabBarButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4KR-ma-xeN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9gZ-0q-emW">
                                         <rect key="frame" x="264" y="4" width="35" height="35"/>
@@ -59,6 +71,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" image="trending_selected_icon"/>
+                                        <connections>
+                                            <action selector="onTabBarButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Cg7-Nv-flB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25465816259384155" green="0.32715439796447754" blue="0.40431636571884155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

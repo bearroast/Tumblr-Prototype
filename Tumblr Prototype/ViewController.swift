@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var composeViewController: UIViewController!
     var accountViewController: UIViewController!
     var trendingViewController: UIViewController!
-    
+    var selectedButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -46,6 +46,23 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func onTabBarButton(sender: UIButton) {
+        
+        selectedButton = sender as UIButton
+        
+        var selectedTab = selectedButton
+        if selectedTab == homeButton {
+            println("Home")
+        } else if selectedTab == searchButton {
+            println("Search")
+        } else if selectedTab == accountButton {
+            println("Account")
+        } else if selectedTab == trendingButton {
+            println("Trending")
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
