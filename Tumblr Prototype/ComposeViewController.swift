@@ -10,6 +10,18 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var textButton: UIButton!
+    @IBOutlet weak var photoButton: UIButton!
+    @IBOutlet weak var quoteButton: UIButton!
+    @IBOutlet weak var linkButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var videoButton: UIButton!
+   
+    
+    @IBAction func onCancelButton(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
