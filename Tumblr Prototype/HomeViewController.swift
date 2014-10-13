@@ -1,26 +1,23 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  Tumblr Prototype
 //
-//  Created by Bjørn Eivind Rostad on 10/10/14.
+//  Created by Bjørn Eivind Rostad on 10/12/14.
 //  Copyright (c) 2014 Bjørn Eivind Rostad. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
-    @IBOutlet weak var containerView: UIView!
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-
-
 }
-
