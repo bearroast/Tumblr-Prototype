@@ -12,6 +12,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="jQt-6P-YCl" userLabel="Container">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="HCq-8P-PFx" userLabel="Tab Bar">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,16 +63,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.25465816259384155" green="0.32715439796447754" blue="0.40431636571884155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" id="jQt-6P-YCl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="accountButton" destination="Vo4-p0-fUA" id="eWc-Sn-a27"/>
+                        <outlet property="composeButton" destination="Vll-qk-2rM" id="zIu-FW-JKq"/>
                         <outlet property="containerView" destination="jQt-6P-YCl" id="2YS-qj-TAz"/>
+                        <outlet property="homeButton" destination="Uld-PD-K56" id="ALC-ai-xb9"/>
+                        <outlet property="searchButton" destination="ywd-fo-Loh" id="LzN-MI-nK5"/>
+                        <outlet property="trendingButton" destination="9gZ-0q-emW" id="eFm-zf-RQZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
