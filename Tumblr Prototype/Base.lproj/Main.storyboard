@@ -78,6 +78,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.25465816259384155" green="0.32715439796447754" blue="0.40431636571884155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explore_popup" id="Ynb-x1-SCZ">
+                                <rect key="frame" x="-4" y="450" width="185" height="77"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -86,6 +90,7 @@
                         <outlet property="composeButton" destination="Vll-qk-2rM" id="zIu-FW-JKq"/>
                         <outlet property="containerView" destination="jQt-6P-YCl" id="2YS-qj-TAz"/>
                         <outlet property="homeButton" destination="Uld-PD-K56" id="ALC-ai-xb9"/>
+                        <outlet property="popupImageView" destination="Ynb-x1-SCZ" id="sa3-OG-s7C"/>
                         <outlet property="searchButton" destination="ywd-fo-Loh" id="LzN-MI-nK5"/>
                         <outlet property="trendingButton" destination="9gZ-0q-emW" id="eFm-zf-RQZ"/>
                     </connections>
@@ -291,6 +296,7 @@
         <image name="account_selected_icon" width="35" height="35"/>
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
+        <image name="explore_popup" width="185" height="77"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>

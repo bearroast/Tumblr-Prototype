@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var trendingButton: UIButton!
     
+    @IBOutlet weak var popupImageView: UIImageView!
     
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
@@ -45,7 +46,13 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         homeButton.selected = true
         
         
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2,options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
+            self.popupImageView.transform = CGAffineTransformMakeTranslation(0, -3)
+        }, completion: nil)
+        
+        
     }
+
 
     @IBAction func onTabBarButton(sender: UIButton) {
 
@@ -70,6 +77,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
             self.addChildViewController(searchViewController)
             containerView.addSubview(searchViewController.view)
             searchViewController.didMoveToParentViewController(self)
+            self.popupImageView.alpha = 0
             println("Search")
             
         } else if tabBarButton == accountButton {
