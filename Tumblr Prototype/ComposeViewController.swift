@@ -33,12 +33,4 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    // Allow custom transition?
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        modalPresentationStyle = UIModalPresentationStyle.Custom
-        transitioningDelegate = self
-    }
 }
