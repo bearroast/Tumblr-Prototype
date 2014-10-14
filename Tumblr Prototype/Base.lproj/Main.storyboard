@@ -38,6 +38,7 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="6qh-FZ-HC6" id="MQx-Kz-LK8"/>
+                        <outlet property="loginForm" destination="UpP-ba-eok" id="kEi-md-F4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRN-pr-n4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>

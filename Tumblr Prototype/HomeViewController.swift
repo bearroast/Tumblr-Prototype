@@ -41,7 +41,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     }
         
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 0.4
+        return 0.8
     }
         
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -54,9 +54,13 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
             
             let vc = toViewController as LoginViewController
 
+            vc.loginForm.transform = CGAffineTransformMakeTranslation(0, -300)
             
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
+            UIView.animateWithDuration(0.4, delay: 0.4, options: nil, animations: { () -> Void in
+                vc.loginForm.transform = CGAffineTransformMakeTranslation(0, 0)
+            }, completion: nil)
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 toViewController.view.alpha = 1
                 }) { (finished: Bool) -> Void in
@@ -66,8 +70,14 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
             
             let vc = fromViewController as LoginViewController
 
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, delay: 0.2, options: nil, animations: { () -> Void in
                 fromViewController.view.alpha = 0
+
+            }, completion: nil)
+            UIView.animateWithDuration(0.4, animations: { () -> Void in
+                vc.loginForm.transform = CGAffineTransformMakeTranslation(0, -300)
+
+                
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
                     fromViewController.view.removeFromSuperview()
