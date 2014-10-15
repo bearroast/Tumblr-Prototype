@@ -20,6 +20,7 @@ class ComposeViewController: UIViewController, UIViewControllerTransitioningDele
    
     
     @IBAction func onCancelButton(sender: UIButton) {
+        //// Closing the modal
         dismissViewControllerAnimated(true, completion: nil)
     }
     

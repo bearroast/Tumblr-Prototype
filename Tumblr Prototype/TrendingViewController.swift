@@ -15,7 +15,8 @@ class TrendingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //// Setting the scrollView to be the same size as trendingImageView
         scrollView.contentSize = trendingImageView.image!.size
     }
 

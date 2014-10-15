@@ -19,20 +19,19 @@ class SearchViewController: UIViewController {
         
         scrollView.alpha = 0
         
-        var loading = UIImage.animatedImageNamed("loading-", duration: 0.5)
+        //// Using animatedImageNamed to find all pngs with "loading-" and loop through them
+        var loading = UIImage.animatedImageNamed("loading-", duration: 0.6)
         loadingImageView.image = loading
         
+        //// Just realized the asset is too short to be scrolling so I'm doing a great job at 
+        //// wasting my own time by debuggin why this view didn't scroll:)
         scrollView.contentSize = searchImageView.image!.size
-        
-        // Just realized the asset is too short to be scrolling so I'm doing a great job at wasting my own time :)
-        
-        
+  
     }
     
+    
     override func viewDidAppear(animated: Bool) {
-        
         delay(2, closure: { () -> () in
-            
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.scrollView.alpha = 1
             })
@@ -40,7 +39,7 @@ class SearchViewController: UIViewController {
     }
     
     
-    
+    //// Delay function to simulate the loading
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(

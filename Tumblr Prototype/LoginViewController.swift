@@ -15,9 +15,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //// Open the keyboard without tapping into any of the text fields
         emailField.becomeFirstResponder()
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +24,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //// Closing the modal by tapping Cancel or OK
     @IBAction func onCloseButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
 

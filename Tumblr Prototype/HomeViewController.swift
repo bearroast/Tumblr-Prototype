@@ -17,11 +17,11 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //// Adding the login modal to the view
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
     }
 
-        
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationVC = segue.destinationViewController as UIViewController
@@ -54,6 +54,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
             
             let vc = toViewController as LoginViewController
 
+            //// Animating the modal form the top
             vc.loginForm.transform = CGAffineTransformMakeTranslation(0, -300)
             
             containerView.addSubview(toViewController.view)
@@ -75,6 +76,8 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
 
             }, completion: nil)
             UIView.animateWithDuration(0.4, animations: { () -> Void in
+                
+                //// Modal goes back out the same way it came in
                 vc.loginForm.transform = CGAffineTransformMakeTranslation(0, -300)
 
                 
@@ -84,9 +87,6 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
             }
         }
     }
-        
-        
-    
         
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
