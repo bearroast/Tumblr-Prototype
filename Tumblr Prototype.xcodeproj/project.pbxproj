@@ -17,8 +17,8 @@
 		40498F3E19EB898700CCFCBD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40498F3D19EB898700CCFCBD /* SearchViewController.swift */; };
 		40498F4019EB8A7300CCFCBD /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40498F3F19EB8A7300CCFCBD /* ComposeViewController.swift */; };
 		40498F4419EB8B3500CCFCBD /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40498F4319EB8B3500CCFCBD /* TrendingViewController.swift */; };
+		404AD2B919EE389D00F9C7DD /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404AD2B819EE389D00F9C7DD /* PopupView.swift */; };
 		4059810D19ED08BA00409B2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059810C19ED08BA00409B2B /* LoginViewController.swift */; };
-		409998DF19EE05680097ABE5 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409998DE19EE05680097ABE5 /* PopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,8 @@
 		40498F3F19EB8A7300CCFCBD /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		40498F4219EB8ABC00CCFCBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/AccountViewController.swift; sourceTree = "<group>"; };
 		40498F4319EB8B3500CCFCBD /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		404AD2B819EE389D00F9C7DD /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		4059810C19ED08BA00409B2B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		409998DE19EE05680097ABE5 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopupView.swift; path = ../PopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +90,10 @@
 		4033E26719E8BABA00DE8EAB /* Tumblr Prototype */ = {
 			isa = PBXGroup;
 			children = (
-				409998DE19EE05680097ABE5 /* PopupView.swift */,
 				4033E26A19E8BABA00DE8EAB /* AppDelegate.swift */,
 				4033E26C19E8BABA00DE8EAB /* ViewController.swift */,
 				4033E26E19E8BABA00DE8EAB /* Main.storyboard */,
+				404AD2B819EE389D00F9C7DD /* PopupView.swift */,
 				4059810C19ED08BA00409B2B /* LoginViewController.swift */,
 				40498F4319EB8B3500CCFCBD /* TrendingViewController.swift */,
 				40498F4119EB8ABC00CCFCBD /* AccountViewController.swift */,
@@ -233,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4059810D19ED08BA00409B2B /* LoginViewController.swift in Sources */,
-				409998DF19EE05680097ABE5 /* PopupView.swift in Sources */,
+				404AD2B919EE389D00F9C7DD /* PopupView.swift in Sources */,
 				40498F4019EB8A7300CCFCBD /* ComposeViewController.swift in Sources */,
 				4033E26D19E8BABA00DE8EAB /* ViewController.swift in Sources */,
 				4033E26B19E8BABA00DE8EAB /* AppDelegate.swift in Sources */,
