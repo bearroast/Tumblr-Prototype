@@ -14,13 +14,13 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
 
     @IBOutlet weak var containerView: UIView!
 
+    @IBOutlet weak var exploreView: PopupView!
+    
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var composeButton: UIButton!
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var trendingButton: UIButton!
-    
-    @IBOutlet weak var popupImageView: UIImageView!
     
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
@@ -33,27 +33,34 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        //// Adding the views from the storyboard
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
         composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
         
+
+        //// Setting Home tab to be selected when opening the app
         containerView.addSubview(homeViewController.view)
-        
         homeButton.selected = true
         
         
+        self.exploreView.text = "Use the Explore tab to find blogs to follow."
+        
         UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.2,options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
-            self.popupImageView.transform = CGAffineTransformMakeTranslation(0, -3)
+            self.exploreView.transform = CGAffineTransformMakeTranslation(0, -3)
         }, completion: nil)
         
         
     }
 
 
+    //// Tab bar buttons
+    
     @IBAction func onTabBarButton(sender: UIButton) {
 
         selectedButton = sender as UIButton
@@ -67,29 +74,37 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         
         var tabBarButton = selectedButton
         
+        
+        //// Adding subviews from the tabs
         if tabBarButton == homeButton {
             self.addChildViewController(homeViewController)
             containerView.addSubview(homeViewController.view)
             homeViewController.didMoveToParentViewController(self)
+            self.exploreView.alpha = 1
+
             println("Home")
 
         } else if tabBarButton == searchButton {
             self.addChildViewController(searchViewController)
             containerView.addSubview(searchViewController.view)
             searchViewController.didMoveToParentViewController(self)
-            self.popupImageView.alpha = 0
+            self.exploreView.alpha = 0
             println("Search")
             
         } else if tabBarButton == accountButton {
             self.addChildViewController(accountViewController)
             containerView.addSubview(accountViewController.view)
             accountViewController.didMoveToParentViewController(self)
+            self.exploreView.alpha = 1
+
             println("Account")
             
         } else if tabBarButton == trendingButton {
             self.addChildViewController(trendingViewController)
             containerView.addSubview(trendingViewController.view)
             trendingViewController.didMoveToParentViewController(self)
+            self.exploreView.alpha = 1
+
             println("Trending")
             
         }
@@ -127,7 +142,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
             
             let vc = toViewController as ComposeViewController
             
-            // setting the buttons outside of the view
+            //// Setting the buttons outside of the view
             vc.textButton.transform = CGAffineTransformMakeTranslation(0, 568)
             vc.photoButton.transform = CGAffineTransformMakeTranslation(0, 568)
             vc.quoteButton.transform = CGAffineTransformMakeTranslation(0, 568)
@@ -144,8 +159,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
                 toViewController.view.alpha = 1
                 }) { (finished: Bool) -> Void in
                     
-                    // move buttons to the view
-                    
+                    //// Animate buttons to the view using the a default value of SpringWithDamping: 0.7, initialSpringVelocity: 0.2
+                    //// Buttons should animate in at different delays
                     self.springWithDelay(0.4, delay: 0.16, {
                         vc.textButton.transform = CGAffineTransformMakeTranslation(0, 0)
                         }, nil)
@@ -171,6 +186,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
                         }, nil)
                     
                     
+                    //// Cancel button has no delay or spring
                     UIView.animateWithDuration(0.42, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: nil, animations: { () -> Void in
                         vc.cancelButton.transform = CGAffineTransformMakeTranslation(0, 0)
                     }, completion: nil )
@@ -183,7 +199,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
             
                 let vc = fromViewController as ComposeViewController
 
-            
+                //// Animate buttons to the view using the a default value of SpringWithDamping: 0.7, initialSpringVelocity: 0.2
+                //// Buttons should animate in at different delays
                 self.springWithDelay(0.4, delay: 0.16, {
                     vc.textButton.transform = CGAffineTransformMakeTranslation(0, -400)
                     }, nil)
@@ -210,7 +227,6 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
             
                 UIView.animateWithDuration(0.5, delay: 0.4, options: nil, animations: { () -> Void in
                     fromViewController.view.alpha = 0
-
                     }, completion: { (finished: Bool) -> Void in
                         transitionContext.completeTransition(true)
                         fromViewController.view.removeFromSuperview()
@@ -224,13 +240,11 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     }
 
 
+    //// Function for standardizing the spring
     func springWithDelay(duration: NSTimeInterval, delay: NSTimeInterval, animations: (() -> Void)!, completion: ((Bool) -> Void)!) {
-        
-        
-        UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.2, options: nil, animations: {
-            
-            animations()
-            
-            }, nil )   }
+            UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.2, options: nil, animations: {
+                    animations()
+                }, nil )
+    }
 }
 
